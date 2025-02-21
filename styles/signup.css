@@ -1,0 +1,132 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: url('../images.jpeg') no-repeat center center/cover;
+    background-size: cover; /* Ensures proper image scaling */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Adding an Animated Gradient Overlay */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+    animation: backgroundAnimation 10s infinite alternate;
+    z-index: -1;
+}
+
+/* Background Animation */
+@keyframes backgroundAnimation {
+    0% { opacity: 0.7; }
+    100% { opacity: 0.9; }
+}
+
+/* Login Container with Glassmorphism */
+.login-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 12px;
+    color: white;
+    width: 350px;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+    transition: 0.3s ease-in-out;
+}
+
+.login-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Form Heading */
+.login-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Input Group */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    background: linear-gradient(45deg, #28a745, #218838);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #218838, #1c7430);
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.6);
+    transform: scale(1.05);
+}
+
+/* Sign-Up Link */
+.signup-link {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: #4dc3ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .login-container {
+        width: 90%;
+    }
+}
